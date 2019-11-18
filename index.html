@@ -1,86 +1,91 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="author" content="Vivi Wei">
-    <meta name="keywords" content="visualization, project banana, data analysis">
-    <title>ProjectBanana</title>
-    <!-- Bootstrap CDN -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-
-    <link rel="stylesheet" type="text/css" href="index.css">
-    <script type="text/javascript" src="index.js"></script>
-</head>
-
-<body>
-    <div class="row" id="myheader" style="margin:10px;padding:0px;">
-        <div class="col-md-12"></div>
-        <h2>Corrlation Demonstration</h2>
-        <h4>This webiste shows with the change of features and min utterances for each intent, 
-            the change of correlation scores between features and NLU error rate.</h4>
-    </div>
-
-    <div class="container" style="margin:10px;padding:0px;">
-            <h5>Domain: <select id="domainID"></select></h5>
-            <div class="col-md-4" style="background-color:lavender;">
-                <h5>Features:</h5>
-                <div class="checkbox">
-                        <label><input type="checkbox" id="intent-error" checked>Intent error</label>
-                </div>
-                <div class="checkbox">
-                        <label><input type="checkbox" id="slot-error" checked>Slot error</label>
-                </div>
-                <!-- <div class="checkbox">
-                        <label><input type="checkbox" id="slot-insertion" checked>Slot error type: insertion</label>
-                </div>
-                <div class="checkbox">
-                        <label><input type="checkbox" id="slot-substitution" checked>Slot error type: substitution</label>
-                </div>
-                <div class="checkbox">
-                        <label><input type="checkbox" id="slot-deletion" checked>Slot error type: deletion</label>
-                </div> -->
-                <div class="checkbox">
-                        <label><input type="checkbox" id="number-utterance" checked>Number of utterances</label>
-                </div>
-            </div>
-            <div class="col-md-3" style="background-color:LightCyan;">
-                <h5>Minimum utterance number: </h5>
-                <!-- <div class="form-group">
-                <input type="number" class="form-control" id="minUtt" min=0 max=100 value=5 step=5>
-                </div> -->
-                <div class='select'>
-                        <select name="minimumUtt" id="minimum-utterance">
-                                <option value="5">5</option>
-                                <option value="50">50</option>
-                                <option value="100">100</option>
-                        </select>
-                </div>
-            </div>
-            <div class="col-md-4" style="background-color:lavenderblush;">
-                <h5>Correlation scores: </h5>
-                <div>
-                    <button onclick="corre_score()">Calculate Correlation Score</button> 
-                    <h5><span id="correScore"></span></h5>                  
-                </div>
-                <div> 
-                        <button onclick="newLogic()">Calculate xxx Correlation Score</button> 
-                        <h5><span id="correScore2"></span></h5>      
-                </div>
-            </div>
-
-    </div>
-
-    
+	<head>
+		<title>Pan Wei</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Pan (Vivi) Wei">
+                <meta name="msvalidate.01" content="305CD82AE65FC4C9597F80416C1271B7" />
+		<link rel='stylesheet' media='screen' href='/static/css/base.css' />
+		<!-- <link rel='stylesheet' media='screen' href='/static/css/darknet.css' /> -->
+        <link rel='stylesheet' media='screen' href='/static/css/index.css' />
+		<link rel='stylesheet' media='screen' href='/static/css/papers.css' />
+        <link rel='stylesheet' media='screen' href='/static/css/projects.css' />
+        <link rel='stylesheet' media='screen' href='/static/css/recipes.css' />
         
-    </div>
-</body>
+		<!-- <link rel='stylesheet' media='screen' href='/static/css/coqindex.css' /> -->
 
-<script language="javascript">
-    init_domains()
-</script>
+        <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,400italic' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Roboto:300,300italic,100italic,100,500' rel='stylesheet' type='text/css'>
+		
+		<!-- <link rel='icon' type='image/png' href='/static/icon.png' /> -->
+        <meta name="description" content="">
+    
+		<!-- <script type="text/javascript">
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-37236849-1']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+
+		</script> -->
+	</head>
+
+	<body>
+		<div class=top>
+			<ul class="nav">
+                <a href="/"><li>home</li></a>
+                <a href="/projects/"><li>projects</li></a>
+                <a href="/publications/"><li>publications</li></a>
+                <a href="/recipes/"><li>recipes</li></a>
+                <a href="/resume/Pan_Wei_CV.pdf"><li>résumé</li></a>
+                
+			</ul>
+			<div class=break></div>
+			
+			<div class=break></div>
+		</div>
+		
+    <div class="main markdown">
+        <style>
+#ponies img, #external img{
+display:inline;
+}
+</style>
+
+<div class=top>
+<h1 class="header">Pan Wei 魏攀</h1>
+<div class='green bar'></div>
+<div class='blue bar'></div>
+</div>
+
+<h1>Welcome to my website!</h1>
+<p>I now live and work in Boston area.</p>
+<p>Outside of my work, I enjoy cooking.</p>
+
+<h1>Experience </h1>
+<p>Page 1: Born in Wuhan, China.</p>
+<p>Page 2: Elementary school is only 10 minutes away from home, where I learnt to sprint when forget my homework at home.</p>
+<p>Page 3: Middle school time is so simple.</p>
+<p>Page 4: High school is like one foot into the mud.</p>
+<p>Page 5: College in Beijing... </p>
+<p>Page 6: Graduate study in two foreign countries (UK and US)</p>
+<p>Page 7: Now work at Amazon as a Research Scientist in Natural Language Understanding.</p>
+
+<h1>Find me</h1>
+<div id="external">
+    <a target="_blank" href="mailto:vivi.weipan@gmail.com"><img src="static/logos/gmail.png" width="40"></a>
+    <a target="_blank" href="https://scholar.google.com/citations?user=XCTwRUQAAAAJ&hl=en"><img src="/static/logos/gscholar.png" width="40"></a>
+    <a target="_blank" href="https://www.linkedin.com/in/viviviolaine"><img src="/static/logos/linkedin.png" width="40"></a>
+
+</div>
+   
+    </div>
+    
+	</body>
 </html>
