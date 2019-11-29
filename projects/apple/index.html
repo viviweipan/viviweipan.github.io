@@ -1,23 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Projects</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Pan (Vivi) Wei">
+            <meta name="msvalidate.01" content="305CD82AE65FC4C9597F80416C1271B7" />
+    <link rel='stylesheet' media='screen' href='/static/css/base.css' />
+    <link rel='stylesheet' media='screen' href='/static/css/index.css' />
+    <link rel='stylesheet' media='screen' href='/static/css/papers.css' />
+    <link rel='stylesheet' media='screen' href='/static/css/projects.css' />
+    <link rel='stylesheet' media='screen' href='/static/css/recipes.css' />
+
+    <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,400italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Roboto:300,300italic,100italic,100,500' rel='stylesheet' type='text/css'>
+
     <meta name="description" content="">
-    <title>ProjectApple</title>
-    <link href="./css/style.css" rel="stylesheet">
 </head>
 <body>
+<div class=top>
+        <ul class="nav">
+            <a href="/"><li>home</li></a>
+            <a href="/projects/"><li>projects</li></a>
+            <a href="/publications/"><li>publications</li></a>
+            <a href="/blog/"><li>blog</li></a>
+            <a href="/resume/Pan_Wei_CV.pdf"><li>résumé</li></a>
+        </ul>
+        <div class=break></div>
+        
+        <div class=break></div>
+</div>
+
+<div class="main markdown">
+    <style>
+    #ponies img, #external img{
+    display:inline;
+    }
+    </style>
+
     <script async src="./javascript/index.js"></script>
     <!-- Headline -->
     <h1>Label strip</h1>
-    <h3 id='date'></h3>
+    <!-- <h3 id='date'></h3> -->
     
     Utterance: <input type="text" id="utt">
     <button id="process">Process</button>
     <hr>
     Results: <div id="result"></div>
 
+</div>
 </body>
 </html>

@@ -12,15 +12,18 @@ html, body{
     margin-bottom:-.5em;
 }
 pre{
+    text-align:left;
     overflow:scroll;
     padding:1em;
 	font-family: 'Ubuntu Mono', monospace;
     /* background-color:#205; */
-    background-color:#F8F8FF;
+    background-color:#0D2B35;
 }
 code, .code{
+    text-align:left;
 	font-family: 'Ubuntu Mono', monospace;
     color:#0f0;
+    /* color:#879694; */
 }
 
 a{
@@ -34,7 +37,8 @@ p{
 
 body{
     /* color:#0ff; */
-    color:#00a0a0
+    color:#00a0a0;
+    /* color:#016BA7; */
 }
 
 hr{
