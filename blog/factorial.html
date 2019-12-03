@@ -49,8 +49,51 @@ def factorial_recursive(n):
         return n*factorial_recursive(n-1)
             </code></pre>
 
-        
-        </div>
+        <p>This way is not the best approach. If n is large is enough, it will give runtime error.</p>
+        <p>A better way is to do it iteratively as following: </p>
+        <pre><code>
+def factorial_iterative(n):
+    result = 1
+    if n == 0:
+        return result
+    else:
+        for i in range(1,n+1):
+            result *= i
+    return result
+        </code></pre>
+        <p>Although python does not support TCO (Tail Call Optimization), we still can write it in TCO way:</p>
+        <pre><code>
+def factorial_tail(n):
+    return factorial_internal(n, 1)
+def factorial_internal(n, accumulator=1):
+    if n == 0:
+        return accumulator
+    else:
+        return factorial_internal(n-1, n*accumulator)
+        </code></pre>
+        <p>We can also do it in a middle point way:</p>
+        <pre><code>
+def factorial_half(n):
+    return factorial_internal(1, n)
 
+def factorial_internal(start, end):
+    if end == 0:
+        return 1
+    if start == end:
+        return start
+    else:
+        mid = (start + end) //2
+        return factorial_internal(start, mid)*factorial_internal(mid+1, end)
+        </code></pre>
+
+        <p>Of course, python has it factorial function</p>
+        <pre><code>
+import math
+math.factorial(n)
+        </code></pre>
+        <p>You can find the implementation in <a href="https://hg.python.org/cpython/file/7937aa6b7e92/Modules/mathmodule.c#l1218">C code</a></p>
+        <p>Also python2* and python3* have different ways of implementing factorial, see <a href="https://stackoverflow.com/questions/9815252/why-is-math-factorial-much-slower-in-python-2-x-than-3-x">post</a>.</p>
+
+    </div>
 	</body>
 </html>
