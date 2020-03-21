@@ -57,7 +57,7 @@ function myFunction(){
     var fb_r = parseFloat(flour) + parseFloat(butter);
     var fs_r = flour/sugar;
     var judge = fb_r*fs_r;
-    var result = (butter >= 100) ? "Great job!":"You burnt it";
+    var result = (butter <= 100) ? "Great job!":"You burnt it";
 
     document.getElementById("result").innerHTML = result;
 }
