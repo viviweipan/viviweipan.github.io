@@ -47,6 +47,8 @@
         Flour in gram: <input type="number" id="flour" value=200> <br>
         Cooking time in minute: <input type="number" id="time" value=15> <br>
         <button onclick="myFunction()">Cook it!</button>
+        <img id="cookie" style="display:none; height: 200px;" src="./cookie.png"/>
+        <img id="bad" style="display:none; height: 200px;" src="./bad.png"/>
 
     <p id="result"></p>
 
@@ -56,14 +58,31 @@ function myFunction(){
     var sugar = Number (document.getElementById("sugar").value);
     var flour = Number (document.getElementById("flour").value);
     var time = Number (document.getElementById("time").value);
+    // var c = confirm("Show your cookie?");
+    var good_cookie = document.getElementById("cookie");
+    var bad_cookie = document.getElementById("bad");
     var fb_r = flour/butter;
     var fs_r = flour/sugar;
     var judge = fb_r*fs_r;
     if (judge <= 5 && judge >= 3 && time <= 20 && time >= 10){
         result = "Good Job!"
+
     }
     else{
         result = "You burnt it!"
+    }
+
+    if (result == "Good Job!"){
+        good_cookie.style.visibility = 'visible';
+        good_cookie.style.display = 'block';
+        bad_cookie.style.visibility = 'hidden';
+        bad_cookie.style.display = 'none'
+        }
+    else {
+        good_cookie.style.visibility = 'hidden';
+        good_cookie.style.display = 'none'
+        bad_cookie.style.visibility = 'visible';
+        bad_cookie.style.display = 'block';
     }
 
     document.getElementById("result").innerHTML = result;
