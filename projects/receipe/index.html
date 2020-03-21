@@ -40,11 +40,12 @@
 
     <!-- <script async src="./receipe.py"></script> -->
     <!-- Headline -->
-    <h1>Cookie receipe</h1>
+    <h1>Cookie recipe</h1>
 
         Butter in gram: <input type="number" id="butter" value=100> <br>
         Sugar in gram: <input type="number" id="sugar" value=100> <br>
         Flour in gram: <input type="number" id="flour" value=200> <br>
+        Cooking time in minute: <input type="number" id="time" value=15> <br>
         <button onclick="myFunction()">Click</button>
 
     <p id="result"></p>
@@ -52,12 +53,18 @@
 <script>
 function myFunction(){
     var butter = Number(document.getElementById("butter").value);
-    var sugar = Number (document.getElementById("butter").value);
-    var flour = Number (document.getElementById("butter").value);
-    var fb_r = parseFloat(flour) + parseFloat(butter);
+    var sugar = Number (document.getElementById("sugar").value);
+    var flour = Number (document.getElementById("flour").value);
+    var time = Number (document.getElementById("time").value);
+    var fb_r = flour/butter;
     var fs_r = flour/sugar;
     var judge = fb_r*fs_r;
-    var result = (butter <= 100) ? "Great job!":"You burnt it";
+    if (judge <= 5 && judge >= 3 && time <= 20 && time >= 10){
+        result = "Good Job!"
+    }
+    else{
+        result = "You burnt it!"
+    }
 
     document.getElementById("result").innerHTML = result;
 }
