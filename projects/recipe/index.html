@@ -38,17 +38,19 @@
     }
     </style>
 
-    <!-- <script async src="./receipe.py"></script> -->
     <!-- Headline -->
     <h1>Cookie recipe</h1>
 
         Butter in gram: <input type="number" id="butter" value=100> <br>
         Sugar in gram: <input type="number" id="sugar" value=100> <br>
         Flour in gram: <input type="number" id="flour" value=200> <br>
+        <br>
+        With all the ingredients, let's set the oven time!! <br>
         Cooking time in minute: <input type="number" id="time" value=15> <br>
         <button onclick="myFunction()">Cook it!</button>
         <img id="cookie" style="display:none; height: 200px;" src="./cookie.png"/>
         <img id="bad" style="display:none; height: 200px;" src="./bad.png"/>
+        <img id="unhappy" style="display:none; height: 200px;" src="./unhappy.png"/>
 
     <p id="result"></p>
 
@@ -61,15 +63,19 @@ function myFunction(){
     // var c = confirm("Show your cookie?");
     var good_cookie = document.getElementById("cookie");
     var bad_cookie = document.getElementById("bad");
+    var unhappy_cookie = document.getElementById("unhappy");
     var fb_r = flour/butter;
     var fs_r = flour/sugar;
     var judge = fb_r*fs_r;
-    if (judge <= 5 && judge >= 3 && time <= 20 && time >= 10){
+    if (judge <= 5 && judge >= 3 && time <= 20 && time > 10){
         result = "Good Job!"
 
     }
-    else{
-        result = "You burnt it!"
+    else if (time <= 10){
+        result = "It is not yet ready :(";
+    }
+    else {
+        result = "You burnt it!";
     }
 
     if (result == "Good Job!"){
@@ -77,12 +83,25 @@ function myFunction(){
         good_cookie.style.display = 'block';
         bad_cookie.style.visibility = 'hidden';
         bad_cookie.style.display = 'none'
+        unhappy_cookie.style.visibility = 'hidden';
+        unhappy_cookie.style.display = 'none'
         }
-    else {
+    else if (result == "You burnt it!"){
         good_cookie.style.visibility = 'hidden';
         good_cookie.style.display = 'none'
         bad_cookie.style.visibility = 'visible';
         bad_cookie.style.display = 'block';
+        unhappy_cookie.style.visibility = 'hidden';
+        unhappy_cookie.style.display = 'none'
+    }
+    else{
+        good_cookie.style.visibility = 'hidden';
+        good_cookie.style.display = 'none'
+        bad_cookie.style.visibility = 'hidden';
+        bad_cookie.style.display = 'none';
+        unhappy_cookie.style.visibility = 'visible';
+        unhappy_cookie.style.display = 'block'
+
     }
 
     document.getElementById("result").innerHTML = result;
