@@ -38,18 +38,30 @@
     }
     </style>
 
-    <script async src="./javascript/index.js"></script>
+    <!-- <script async src="./receipe.py"></script> -->
     <!-- Headline -->
-    <h1>Label strip</h1>
-    <h3 id='date'></h3>
-    
-    Example input: My|Other name|Other is|Other Vivi|Name.
-    <br>
-    <br>
-    Utterance: <input type="text" id="utt">
-    <button id="process">Process</button>
-    <hr>
-    Results as follows: <p id="result"></p>
+    <h1>Cookie receipe</h1>
+
+        Butter in gram: <input type="number" id="butter" value=100> <br>
+        Sugar in gram: <input type="number" id="sugar" value=100> <br>
+        Flour in gram: <input type="number" id="flour" value=200> <br>
+        <button onclick="myFunction()">Click</button>
+
+    <p id="result"></p>
+
+<script>
+function myFunction(){
+    var butter = Number(document.getElementById("butter").value);
+    var sugar = Number (document.getElementById("butter").value);
+    var flour = Number (document.getElementById("butter").value);
+    var fb_r = parseFloat(flour) + parseFloat(butter);
+    var fs_r = flour/sugar;
+    var judge = fb_r*fs_r;
+    var result = (butter >= 100) ? "Great job!":"You burnt it";
+
+    document.getElementById("result").innerHTML = result;
+}
+</script>
 
 </div>
 </body>

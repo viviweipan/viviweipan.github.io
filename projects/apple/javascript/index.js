@@ -6,11 +6,3 @@ function utt_process() {
     document.getElementById('result').innerHTML = processed_utt;
 }
 document.getElementById('process').addEventListener('click', utt_process);
-
-// $.ajax({
-//     type: "POST",
-//     url: "python/pythoncode.py",
-//     data: { param: utt}
-//   }).done(function(o) {
-//      // do something
-//   });

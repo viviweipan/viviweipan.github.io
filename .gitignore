@@ -1,3 +1,4 @@
 .DS_Store
+.vscode/
 static/.DS_Store
 static/logos/.DS_Store
