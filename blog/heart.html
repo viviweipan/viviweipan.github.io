@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>Projects</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Pan (Vivi) Wei">
+                <meta name="msvalidate.01" content="305CD82AE65FC4C9597F80416C1271B7" />
+		<link rel='stylesheet' media='screen' href='/static/css/base.css' />
+        <link rel='stylesheet' media='screen' href='/static/css/index.css' />
+		<link rel='stylesheet' media='screen' href='/static/css/papers.css' />
+        <link rel='stylesheet' media='screen' href='/static/css/projects.css' />
+        <link rel='stylesheet' media='screen' href='/static/css/recipes.css' />
+
+        <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,400italic' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Roboto:300,300italic,100italic,100,500' rel='stylesheet' type='text/css'>
+
+        <meta name="description" content="">
+
+	</head>
+
+	<body>
+		<div class=top>
+			<ul class="nav">
+                <a href="/"><li>home</li></a>
+                <a href="/projects/"><li>projects</li></a>
+                <a href="/publications/"><li>publications</li></a>
+                <a href="/blog/"><li>blog</li></a>
+				<a href="/resume/Pan_Wei_CV.pdf"><li>résumé</li></a>
+			</ul>
+			<div class=break></div>
+			
+			<div class=break></div>
+		</div>
+		
+        <div class="main markdown">
+        <style>
+        #ponies img, #external img{
+        display:inline;
+        }
+        </style>
+            <h3>How can you draw a heart in python?</h3>
+            <p>One line like the following:</p>
+            <pre><code>
+print('\n'.join([''.join([('ViviLove'[(x-y)%8]
+if((x*0.05)**2+(y*0.1)**2-1)**3-(x*0.05)**2*(y*0.1)**3<=0 else' ')
+for x in range(-30,30)])for y in range(15,-15,-1)]))
+            </code></pre>
+            <p> What you will get is something like this:</p>
+            <pre><code> 
+                veViviLov           viLoveViv
+            iLoveViviLoveVivi   eViviLoveViviLove
+          viLoveViviLoveViviLoveViviLoveViviLoveViv
+         viLoveViviLoveViviLoveViviLoveViviLoveViviL
+        viLoveViviLoveViviLoveViviLoveViviLoveViviLov
+        iLoveViviLoveViviLoveViviLoveViviLoveViviLove
+        LoveViviLoveViviLoveViviLoveViviLoveViviLoveV
+        oveViviLoveViviLoveViviLoveViviLoveViviLoveVi
+        veViviLoveViviLoveViviLoveViviLoveViviLoveViv
+        eViviLoveViviLoveViviLoveViviLoveViviLoveVivi
+         iviLoveViviLoveViviLoveViviLoveViviLoveVivi
+          iLoveViviLoveViviLoveViviLoveViviLoveVivi
+          LoveViviLoveViviLoveViviLoveViviLoveViviL
+            eViviLoveViviLoveViviLoveViviLoveVivi
+             iviLoveViviLoveViviLoveViviLoveVivi
+              iLoveViviLoveViviLoveViviLoveVivi
+                veViviLoveViviLoveViviLoveViv
+                  iviLoveViviLoveViviLoveVi
+                    LoveViviLoveViviLoveV
+                       ViviLoveViviLov
+                          LoveViviL
+                             Viv
+                              v
+            </code></pre>
+
+        <p>Can you get what is happening?</p>
+        
+    </div>
+	</body>
+</html>
